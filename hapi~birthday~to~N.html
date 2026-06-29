@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; background-color: #ffdce0; text-align: center; font-family: 'Arial', sans-serif; overflow: hidden; height: 100vh; }
+        
+       
+        .flower { position: absolute; font-size: 24px; animation: fall linear infinite; }
+        @keyframes fall { to { transform: translateY(100vh) rotate(360deg); } }
+
+       
+        .card { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
+            background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card.show { transform: translate(-50%, -50%) scale(1); }
+        
+        img { width: 150px; border-radius: 50%; border: 5px solid #ff7979; }
+        h1 { color: #eb4d4b; }
+    </style>
+</head>
+<body>
+
+    <div id="flower-container"></div>
+
+    <div class="card" id="myCard">
+        <img src="birthday.jpg" alt="Photo"> <h1>Happy Birthday!</h1>
+        <p>happy birthday to you you have given me the best days and weeks of my life i apologize if i almost forgot it i just wanna say even tho sometimes you have all the problems in life and family i am here for you and my wish for you is i want you to smile more like how you make me smile everyday just one message on you i will smile in overjoy i understand how hard working you are your creative and a beautiful sunshine brightening in my eyes, your perfect and i want you to know that i know in always saying that
+but im just telling the truth im like your mother im here for your comfort and here to cheer your feelings up from being down to up, ilysm and i hope your healthy and staying smiling
+
+HAPPII BIRTHDAYYYYYY MY LOML ပျော်ရွှင်စရာ မွေးနေ့လေး ဖြစ်ပါစေဗျ။</p>
+    </div>
+
+    <script>
+   
+        function createFlower() {
+            const f = document.createElement('div');
+            f.innerHTML = '🌸';
+            f.className = 'flower';
+            f.style.left = Math.random() * 100 + 'vw';
+            f.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.getElementById('flower-container').appendChild(f);
+            setTimeout(() => f.remove(), 5000);
+        }
+        setInterval(createFlower, 300);
+
+        
+        setTimeout(() => {
+            document.getElementById('myCard').classList.add('show');
+        }, 5000);
+    </script>
+</body>
+</html>
