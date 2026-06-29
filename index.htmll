@@ -4,6 +4,8 @@
     <style>
         body { margin: 0; background-color: #ffdce0; text-align: center; font-family: 'Arial', sans-serif; overflow: hidden; height: 100vh; }
         
+        #flower-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; pointer-events: none; }
+        
         .flower { position: absolute; font-size: 24px; animation: fall linear infinite; }
         @keyframes fall { to { transform: translateY(100vh) rotate(360deg); } }
 
@@ -11,7 +13,7 @@
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
             background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            width: 80%; max-width: 400px;
+            width: 80%; max-width: 400px; z-index: 1; /* Card ကို အောက်ရောက်စေရန် */
         }
         .card.show { transform: translate(-50%, -50%) scale(1); }
         
@@ -21,8 +23,6 @@
 </head>
 <body>
 
-    <div id="flower-container"></div>
-
     <div class="card" id="myCard">
         <h1>Happy Birthday!</h1>
         <p>happy birthday to you you have given me the best days and weeks of my life i apologize if i almost forgot it i just wanna say even tho sometimes you have all the problems in life and family i am here for you and my wish for you is i want you to smile more like how you make me smile everyday just one message on you i will smile in overjoy i understand how hard working you are your creative and a beautiful sunshine brightening in my eyes, your perfect and i want you to know that i know in always saying that
@@ -30,6 +30,8 @@
         <br><br>
         HAPPII BIRTHDAYYYYYY MY LOML ပျော်ရွှင်စရာ မွေးနေ့လေး ဖြစ်ပါစေဗျ။</p>
     </div>
+
+    <div id="flower-container"></div>
 
     <script>
         function createFlower() {
